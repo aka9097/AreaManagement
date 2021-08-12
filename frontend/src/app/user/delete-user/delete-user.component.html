@@ -1,0 +1,35 @@
+<div><h1>User Details</h1></div>
+<div class="form-group">
+    <table class="table">
+        <thead>
+            <th>Adhar Id</th>&nbsp;&nbsp;
+            <th>User Name</th>&nbsp;&nbsp;
+            <th>User Email</th>&nbsp;&nbsp;
+            <th>User Password</th>&nbsp;&nbsp;
+            <th>User Phone</th>&nbsp;&nbsp;
+            <th>User Role</th>&nbsp;&nbsp;
+            <th>User Location Name</th>&nbsp;&nbsp;
+            <th>User FlatNo</th>&nbsp;&nbsp;
+            <th>User Address1</th>&nbsp;&nbsp;
+            <th>User Address2</th>&nbsp;&nbsp;
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | async" >
+                <td>{{user.aadhar}}</td> &nbsp;&nbsp;
+                <td>{{user.userName}}</td>&nbsp;&nbsp;
+                <td>{{user.email}}</td>&nbsp;&nbsp;
+                <td>{{user.password}}</td>&nbsp;&nbsp;
+                <td>{{user.phone}}</td>&nbsp;&nbsp;
+                <td>{{user.role}}</td>&nbsp;&nbsp;
+                <td>{{user.location.locationName}}</td>&nbsp;&nbsp;
+                <td>{{user.address.flatNo}}</td>&nbsp;&nbsp;
+                <td>{{user.address.address1}}</td>&nbsp;&nbsp;
+                <td>{{user.address.address2}}</td>&nbsp;&nbsp;
+                <td><button (click)="delete(user.email)" class ="btn btn-primary"> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button (click)="back()" class ="btn btn-primary"> BACK</button>
+</div>

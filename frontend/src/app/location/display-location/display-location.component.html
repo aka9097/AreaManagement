@@ -1,0 +1,26 @@
+<div><h1>Location Details</h1></div>
+<div class="form-group">
+    <table class="table">
+        <thead>
+            <th>Location Id</th>&nbsp;&nbsp;
+            <th>Location Name</th>&nbsp;&nbsp;
+            <th>Location City</th>&nbsp;&nbsp;
+            <th>Location State</th>&nbsp;&nbsp;
+            <th>Location Country</th>&nbsp;&nbsp;
+            <th>Location Pincode</th>&nbsp;&nbsp;
+        </thead>
+        <tbody>
+            <tr *ngFor="let locations of location | async" >
+                <td>{{locations.id}}</td> &nbsp;&nbsp;
+                <td>{{locations.locationName}}</td>&nbsp;&nbsp;
+                <td>{{locations.city}}</td>&nbsp;&nbsp;
+                <td>{{locations.state}}</td>&nbsp;&nbsp;
+                <td>{{locations.country}}</td>&nbsp;&nbsp;
+                <td>{{locations.pincode}}</td>&nbsp;&nbsp;
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button (click)="back()" class ="btn btn-primary"> BACK</button>
+</div>

@@ -1,0 +1,68 @@
+<div class="container">
+    <div>
+        <h2>Please Enter the Email</h2>
+    </div> <br> <br>
+
+    <div class="container">
+        <div class="row">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12" style="text-align: center">
+                    <input type="text" class="search-query form-control" placeholder="Enter the email id "
+                        [(ngModel)]="email" name="email" id="email" />
+                </div><br>
+                <div class="input-group col-md-12" style="text-align: center"></div>
+                <input type="text" class="search-query form-control" placeholder="Enter the password "
+                    [(ngModel)]="password" name="password" id="password" /><br>
+            </div>
+            <button class="btn btn-primary" type="button" (click)="getByEmail()">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="status == true">
+        <form>
+
+            <div class="form-group">
+                <label for="">Id</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.id" id="id" name="id">
+            </div>
+
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.userName" id="userName" name="userName">
+            </div>
+
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.email" id="email" name="email">
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="">Phone</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.phone" id="phone" name="phone">
+            </div>
+
+
+
+
+            <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+            <br>
+
+
+        </form>
+    </div>
+
+
+    <br>
+    <br>
+    <button class="btn btn-primary" (click)="back()">BACK</button>
+</div>

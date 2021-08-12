@@ -1,0 +1,87 @@
+<!-- <div><h2>Please Enter the Location name</h2></div> <br> <br>
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Enter the location name " [(ngModel)]="locationName" name="locationName" id="locationName" />
+                                   
+                                        <button class="btn btn-primary" type="button" (click)="getByLocationName()">
+                                            <span>Submit</span>
+                                        </button>
+                                   
+                                </div>
+                </div>
+    </div> -->
+<!-- <h1>{{location1}}</h1> -->
+
+<div class="container">
+<form>
+    <div class="form-group">
+        <label for="">AadharID</label>
+        <input type="text" class="form-control" [(ngModel)]="user.aadhar" id="aadhar" name="aadhar">
+    </div>
+
+    <div class="form-group">
+        <label for="">User Name</label>
+        <input type="text" class="form-control" [(ngModel)]="user.userName" id="userName" name="userName">
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="user.email" id="email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="text" class="form-control" [(ngModel)]="user.password" id="salary" name="salary">
+    </div>
+
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text" class="form-control" [(ngModel)]="user.phone" id="phone" name="phone">
+    </div>
+
+    <div class="form-group">
+        <label for="">Role</label>
+        <input type="text" class="form-control" [(ngModel)]="user.role" id="role" name="role">
+    </div>
+
+    <div class="form-group">
+        <label for="">Location</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="user.location.id"
+            id="location" name="location">
+            <!-- <option [ngValue]="null" disabled>Select</option> -->
+            <option *ngFor="let loc of location2" [value]="loc.id">{{loc.locationName}}</option>
+            <!-- <option value="2">Bogadi</option> -->
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="">Flat Number</label>
+        <input type="text" class="form-control" [(ngModel)]="user.address.flatNo" id="flatNo" name="flatNo">
+    </div>
+
+    <div class="form-group">
+        <label for="">Address1</label>
+        <input type="text" class="form-control" [(ngModel)]="user.address.address1" id="address1" name="address1">
+    </div>
+
+    <div class="form-group">
+        <label for="">Address2</label>
+        <input type="text" class="form-control" [(ngModel)]="user.address.address2" id="address2" name="address2">
+    </div>
+
+    <br>
+
+    <br>
+
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+</form>
+
+<br>
+<br>
+<button (click)="back()" class="btn btn-primary"> BACK</button>
+</div>

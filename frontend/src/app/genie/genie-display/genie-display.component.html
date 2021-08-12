@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+        <h1>Genie Details</h1>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <th>GenieId</th>&nbsp;&nbsp;
+                <th>GenieName</th>&nbsp;&nbsp;
+                <th>Serverity</th>&nbsp;&nbsp;
+                <th>Description</th>&nbsp;&nbsp;
+                <th>Date</th>&nbsp;&nbsp;
+                <th>Utatus</th>&nbsp;&nbsp;
+            </thead>
+            <tbody>
+                <tr *ngFor="let genie of genies | async">
+                        <td>{{genie.id}}</td>&nbsp;&nbsp;
+                        <td>{{genie.name}}</td>&nbsp;&nbsp;
+                        <td>{{genie.severity}}</td>&nbsp;&nbsp;
+                        <td>{{genie.description}}</td>&nbsp;&nbsp;
+                        <td>{{genie.date}}</td>&nbsp;&nbsp;
+                        <td>{{genie.status}}</td>&nbsp;&nbsp;
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="back()" class ="btn btn-primary"> BACK</button>
+</div>

@@ -1,0 +1,139 @@
+<!-- <div>
+    <h2>Please Enter the ID</h2>
+</div> <br> <br>
+
+<div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-12" style="text-align: center">
+                <input type="text" class="search-query form-control" placeholder="Enter the email id "
+                    [(ngModel)]="email" name="email" id="email" />
+
+                <button class="btn btn-primary" type="button" (click)="getByEmail()">
+                    <span>Submit</span>
+                </button>
+
+            </div>
+        </div>
+    </div> -->
+<div class="container">
+    <div>
+        <h1>User Details</h1>
+    </div>
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <th>AdharId</th>&nbsp;&nbsp;
+                <th>Name</th>&nbsp;&nbsp;
+                <th>Email</th>&nbsp;&nbsp;
+                <th>Password</th>&nbsp;&nbsp;
+                <th>Phone</th>&nbsp;&nbsp;
+                <th>Role</th>&nbsp;&nbsp;
+                <th>Location Name</th>&nbsp;&nbsp;
+                <th>FlatNo</th>&nbsp;&nbsp;
+                <th>Address1</th>&nbsp;&nbsp;
+                <th>Address2</th>&nbsp;&nbsp;
+            </thead>
+            <tbody>
+                <tr *ngFor="let user1 of users | async">
+                    <td>{{user1.aadhar}}</td> &nbsp;&nbsp;
+                    <td>{{user1.userName}}</td>&nbsp;&nbsp;
+                    <td>{{user1.email}}</td>&nbsp;&nbsp;
+                    <td>{{user1.password}}</td>&nbsp;&nbsp;
+                    <td>{{user1.phone}}</td>&nbsp;&nbsp;
+                    <td>{{user1.role}}</td>&nbsp;&nbsp;
+                    <td>{{user1.location.locationName}}</td>&nbsp;&nbsp;
+                    <td>{{user1.address.flatNo}}</td>&nbsp;&nbsp;
+                    <td>{{user1.address.address1}}</td>&nbsp;&nbsp;
+                    <td>{{user1.address.address2}}</td>&nbsp;&nbsp;
+                    <td><button (click)="getByEmail(user1.email)" class="btn btn-primary"> Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="status == true">
+        <form>
+            <div class="form-group">
+                <label for="">AadharID</label>
+                <input type="text" class="form-control" [(ngModel)]="user.aadhar" id="aadhar" name="aadhar">
+            </div>
+
+            <div class="form-group">
+                <label for="">User Name</label>
+                <input type="text" class="form-control" [(ngModel)]="user.userName" id="userName" name="userName">
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" class="form-control" [(ngModel)]="user.email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="text" class="form-control" [(ngModel)]="user.password" id="salary" name="salary">
+            </div>
+
+            <div class="form-group">
+                <label for="">Phone</label>
+                <input type="text" class="form-control" [(ngModel)]="user.phone" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="">Role</label>
+                <input type="text" class="form-control" [(ngModel)]="user.role" id="role" name="role">
+            </div>
+
+
+            <!-- <div class="form-group">
+            <label for="">Location Id</label>
+            <input type="text" class="form-control" [(ngModel)]="user.location.id" id="location"
+                name="location">
+        </div>
+        <div class="form-group">
+            <label for="">Location Name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.location.locationName" id="location"
+                name="location">
+        </div> -->
+
+            <div class="form-group">
+                <label for="">Location</label>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="user.location.id"
+                    id="location" name="location">
+                    <!-- <option [ngValue]="null" disabled>Select</option> -->
+                    <option *ngFor="let loc of location" [value]="loc.id">{{loc.locationName}}</option>
+                    <!-- <option value="2">Bogadi</option> -->
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="">Flat Number</label>
+                <input type="text" class="form-control" [(ngModel)]="user.address.flatNo" id="flatNo" name="flatNo">
+            </div>
+
+            <div class="form-group">
+                <label for="">Address1</label>
+                <input type="text" class="form-control" [(ngModel)]="user.address.address1" id="address1"
+                    name="address1">
+            </div>
+
+            <div class="form-group">
+                <label for="">Address2</label>
+                <input type="text" class="form-control" [(ngModel)]="user.address.address2" id="address2"
+                    name="address2">
+            </div>
+
+
+
+
+            <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="back()" class ="btn btn-primary"> BACK</button>
+</div>

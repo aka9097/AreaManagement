@@ -1,0 +1,78 @@
+<div class="container">
+    <div>
+        <h1>Genie Details</h1>
+    </div>
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <th>GenieId</th>&nbsp;&nbsp;
+                <th>GenieName</th>&nbsp;&nbsp;
+                <th>Serverity</th>&nbsp;&nbsp;
+                <th>Description</th>&nbsp;&nbsp;
+                <th>Date</th>&nbsp;&nbsp;
+                <th>Status</th>&nbsp;&nbsp;
+            </thead>
+            <tbody>
+                <tr *ngFor="let genie of genies | async">
+                        <td>{{genie.id}}</td>&nbsp;&nbsp;
+                        <td>{{genie.name}}</td>&nbsp;&nbsp;
+                        <td>{{genie.severity}}</td>&nbsp;&nbsp;
+                        <td>{{genie.description}}</td>&nbsp;&nbsp;
+                        <td>{{genie.date}}</td>&nbsp;&nbsp;
+                        <td>{{genie.status}}</td>&nbsp;&nbsp;
+
+                    <td><button (click)="getByGenie(genie.id)" class="btn btn-primary"> Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="status == true">
+        <form>
+            <div class="form-group">
+                <label for="">GenieID</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.id" id="id" name="id">
+            </div>
+
+            <div class="form-group">
+                <label for="">GenieName</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.name" id="name" name="name">
+            </div>
+
+
+            <!-- <div class="form-group">
+                <label for="">Severity</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.severity" id="severity" name="severity">
+            </div> -->
+
+            <div class="form-group">
+                <label for="">description</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.description" id="description" name="description">
+            </div>
+
+            <div class="form-group">
+                <label for="">status</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.status" id="status" name="status">
+            </div>
+
+            <select class="form-select" [(ngModel)]="genie.severity" name="severity" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+
+            <!-- <div class="form-group">
+                <label for="">userId</label>
+                <input type="text" class="form-control" [(ngModel)]="genie.users.id" id="id" name="id">
+            </div> -->
+
+            <button class="btn btn-primary" (click)="update(genie.id)">Submit</button>
+
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="back()" class ="btn btn-primary"> BACK</button>
+</div>
